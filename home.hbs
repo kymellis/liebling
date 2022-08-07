@@ -22,6 +22,19 @@ into the {body} of the default.hbs template --}}
   {{> header background=feature_image}}
 {{/post}}
 
+{{!-- This block preloads specific assets for the index page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/home.css"}}" as="style" />
+  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
+  <link rel="preload" href="{{asset "js/home.js"}}" as="script" />
+{{/contentFor}}
+
+{{!-- This block loads specific styles for the index page --}}
+{{#contentFor "styles"}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
+{{/contentFor}}
+
 <main class="main-wrap">
   {{!-- Everything inside the #post tags pulls data from the post --}}
   {{#post}}
