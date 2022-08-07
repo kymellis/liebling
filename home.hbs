@@ -22,6 +22,11 @@ into the {body} of the default.hbs template --}}
   {{> header background=feature_image}}
 {{/post}}
 
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+  <script defer src="{{asset "js/page.js"}}"></script>
+{{/contentFor}}
+
 {{!-- Featured posts --}}
 {{#get "posts" filter="featured:true" limit="all" as |featured|}}
   <div class="featured-feed js-featured-feed">
@@ -80,8 +85,4 @@ into the {body} of the default.hbs template --}}
   </script>
 {{/contentFor}}
 
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-{{#contentFor "scripts"}}
-  <script defer src="{{asset "js/page.js"}}"></script>
-{{/contentFor}}
 
