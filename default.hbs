@@ -80,10 +80,10 @@
     to inject styles of the hero image to make it responsive --}}
     {{{block "herobackground"}}}
 
-    {{!-- Table of contetets --}}
+    {{!-- Table of contents --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
     <style>
-.gh-content {
+.l-content in-post {
     position: relative;
  }
 
@@ -172,13 +172,13 @@
         // Where to render the table of contents.
         tocSelector: '.gh-toc',
         // Where to grab the headings to build the table of contents.
-        contentSelector: '.gh-content',
+        contentSelector: '.l-content in-post',
         // Which headings to grab inside of the contentSelector element.
         headingSelector: 'h1, h2, h3, h4',
         // Ensure correct positioning
         hasInnerContainers: true,
     });
-    </script>
+</script>
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
